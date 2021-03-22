@@ -1,1 +1,1 @@
-# simple_git
+# ez git
