@@ -11,12 +11,21 @@ read wtd
 
 if [ $wtd = '1' ]; then
    echo 'Input your repository name: '
-   read rep_name
+   	read rep_name
    mkdir $rep_name
    cd $rep_name
    git init
    touch readme.md
-   echo 'If u wanna connect github do it by yourself ;)'
+   git add .
+   git commit -m "First commit."
+   echo 'Do you wanna make remote your rep? y/n'
+   	read remoteOption
+	if [ $remoteOption = 'y' ]; then
+	   echo 'Write yout URL'
+	   	read urlOption
+	   git remote add origin $urlOption
+	   git push -u origin master
+   fi
 elif [ $wtd = '2'  ]; then
    echo 'input name of rep'
    read name_of_rep
